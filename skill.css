@@ -1,0 +1,50 @@
+/* ------------------ skills ------------------  */
+
+
+/* Style for the skills list */
+
+.skills{
+    padding: 30px 0;
+    background-color: #262626;
+    text-align: center;
+}
+
+/* Style for the skill container */
+#skill-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between skill elements */
+    padding: 20px; /* Optional padding around the skill container */
+}
+
+/* Style for individual skill elements */
+.skill-details {
+    text-align: center;
+    width: calc(20% - 20px); /* Adjust the width based on the number of elements you want in a row */
+    background-color:#080808; /* Background color for the skill box */
+    padding: 20px; /* Spacing around the skill box */
+    border-radius: 10px; /* Rounded corners for the skill box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for the skill box */
+    transition: transform 0.2s ease-in-out; /* Animation on hover */
+}
+
+.skill-details:hover {
+    transform: scale(1.05); /* Enlarge the skill box on hover */
+    background: #ff004f;
+}
+
+/* Style for skill images */
+.skill-details img {
+    width: 50px; /* Adjust the image size */
+    height: 50px; /* Adjust the image size */
+    margin-bottom: 10px; /* Spacing between image and text */
+}
+
+/* Style for skill text */
+.skill-details h2 {
+    font-size: 16px; /* Adjust the font size for skill names */
+}
+
+
+/* --------------- end of skills ------------------ */

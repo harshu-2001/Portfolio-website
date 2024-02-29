@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="education.css">
+    <link rel="stylesheet" href="experience.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="skill.css">
+    <script src="https://kit.fontawesome.com/fb7cc2ebd8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- ---------------header--------------  -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img id="logo-image" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <p id="title"></p>
+                <h1>Hi, I'm <span id="firstName"></span><br><span id="lastName"></span> from <span id="country"></span></h1>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----about------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="about-col-1">
+                    <!-- add user photo -->
+                    <img id="about-image">
+                </div>
+
+                <div class="about-col-2">
+                    <!-- add title -->
+                    <h1 class="sub-title">About me</h1>
+                    <p id="desc"></p>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ------------------- expierence -----------------  -->
+        <div class="expierence">
+            <div class="container">
+                <h1 class="sub-title">Experience</h1>
+                <div id="expierence-box">
+                    <!-- ---- js file ----  -->
+                </div>
+            </div>
+        </div>
+
+
+        
+    <!-- ------------------- Skills -----------------  -->
+        <div class="skills">
+            <div class="container">
+                <h1 class="sub-title">Skills</h1>
+                <div id="skill-box">
+                    <!-- ---- js file ----  -->
+                </div>
+            </div>
+        </div>
+
+
+    <!-- ------------------- Education -----------------  -->
+    <div class="education">
+        <div class="container">
+            <h1 class="sub-title">Education</h1>
+            <div id="education-box">
+                    <!-- ---- js file ----  -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----------------Services----------------- -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <!-- js section  -->
+                </div>
+            </div>
+        </div>
+
+
+    <!-- -----------------Portfolio------------------ -->
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <a href="#"><img src="images/yt work.jpg" alt=""></a>
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>My Youtube Channel</h3>
+                        <p>3D modelling, Animation and Product designing 
+                            <a href="https://www.youtube.com/channel/UC9X_I7QvvWfAMfrG_DqIwLQ" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <img src="images/frontend developer.jpg" alt="">
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>Frontend Developer</h3>
+                        <p>My front end project with professionalism.
+                            <a href="https://github.com/Ayyushhh/Portfolio/tree/main" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <img src="images/101.jpg" alt="">
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>My Blender Work</h3>
+                        <p>Drive link for all my previous work.
+                            <a href="https://drive.google.com/drive/folders/1LgG2aVN_Rsvjc6ImjpVUG8R0KIAye6PQ?usp=sharing" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <img src="images/uiux.jpg" alt="">
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>UI/UX</h3>
+                        <p>UI/UX sample work.
+                            <a href="https://drive.google.com/drive/folders/1ohW6OBLu7sjDNyYOkD7x1qIXJo6i4zFv?usp=sharing" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>  
+        </div>
+    </div>
+
+
+
+
+    <!-- ----------- Contact us -----------  -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+
+                <!-- ----left row----  -->
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i> harshushri50@gmail.com</p>
+                    <p> <i class="fa-solid fa-phone"></i>(+91) 6263620591</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/harsh-2001/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/___harsh30_/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/harshu-2001"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <!-- ----- add your resume in folder than add the location ----- -->
+                    <a href="images/Harsh_resume.pdf" download class="btn btn2">Download CV</a>
+                </div>
+
+                <!-- ----right row----  -->
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright <i class="fa-regular fa-copyright"></i> Harsh. Made with <i class="fa-solid fa-heart"></i> </p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- ------------Script-------------  -->
+
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+    <script src="experience.js"></script>
+    <script src="education.js"></script>
+    <script src="skill.js"></script>
+    <script src="service.js"></script>
+
+</body>
+</html>

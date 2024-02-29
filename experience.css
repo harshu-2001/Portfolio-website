@@ -1,0 +1,21 @@
+/* ------------------ experience ---------------  */
+.expierence{
+    padding: 30px 0;
+}
+
+#expierence-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 40px;
+    margin-top: 40px;
+}
+
+.expierence-details{
+    background: #262626;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+/* -------------- end of experience --------------  */
