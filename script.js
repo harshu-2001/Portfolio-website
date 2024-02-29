@@ -6,7 +6,7 @@ const userData = {
     firstName: "Harsh",
     lastName: "Shrivastava",
     country: "India",
-    aboutImage: "images/user.png"
+    aboutImage: "images/user.jpeg"
 };
 
 const logoPhoto = document.getElementById('logo-image');

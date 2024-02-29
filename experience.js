@@ -2,35 +2,20 @@
 
 const experData = [
     {
-        post:"3D Artist",
-        companyname : "Astarix",
-        time : "10/2023 - Present"
+        post:"Junior Android Developer",
+        companyname : "Z1 Tech",
+        time : "02/2023 - Present"
     },
     {
-        post:"Developer",
-        companyname : "Tecnod8",
-        time : "09/2023 - Present"
+        post:"Flutter Develope ",
+        companyname : "Demotic Technologies Pvt. Ltd.",
+        time : "07/2022 - 12/2022"
     },
     {
-        post:"3D Artist",
-        companyname : "TechXR Innovations Private Limited",
+        post:"Android Developer Intern",
+        companyname : "HDPI Soft Weblink Solutions",
         time : "05/2023 - 06/2023"
     },
-    {
-        post:"Graphic Designer",
-        companyname : "Sshark Aum Llp",
-        time : "12/2022 - 08/2023"
-    },
-    {
-        post:"3D Artist",
-        companyname : "Compact Gyan",
-        time : "06/2022 - 08/2022"
-    },
-    {
-        post:"Employer Branding Intern",
-        companyname : "Oplus Cowork",
-        time : "04/2022 - 05/2022"
-    }
 ];
 
 const expierenceBox = document.getElementById("expierence-box");

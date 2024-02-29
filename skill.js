@@ -1,12 +1,12 @@
 // --------------- skills -------------- 
 const skillData = [
     {
-        skill:"Blender",
-        image:"images/Blender.png"
+        skill:"Android",
+        image:"images/android.png"
     },
     {
-        skill:"Java",
-        image:"images/java.png"
+        skill:"Kotlin",
+        image:"images/kotlin.png"
     },
     {
         skill:"CPP",
@@ -16,7 +16,7 @@ const skillData = [
         skill:"HTML",
         image:"images/html.png"
     },
-    {
+    { 
         skill:"CSS",
         image:"images/css.png"
     },
@@ -25,24 +25,20 @@ const skillData = [
         image:"images/js.png"
     },
     {
+        skill:"Flutter",
+        image:"images/Flutter.png"
+    },
+    {
         skill:"Unity",
         image:"images/unity.png"
     },
     {
-        skill:"Photoshop",
-        image:"images/ps.png"
+        skill:"SwiftUI",
+        image:"images/SwiftUI.png"
     },
     {
-        skill:"Illustrator",
-        image:"images/ai.png"
-    },
-    {
-        skill:"Premier Pro",
-        image:"images/pr.png"
-    },
-    {
-        skill:"CorelDraw",
-        image:"images/coreldraw.png"
+        skill:"C#",
+        image:"images/C-sharp.png"
     },
     {
         skill:"Figma",
@@ -53,8 +49,12 @@ const skillData = [
         image:"images/python.png"
     },
     {
-        skill:"Angular",
-        image:"images/angular.png"
+        skill:"Java",
+        image:"images/java.png"
+    },
+    {
+        skill:"React",
+        image:"images/react.png"
     }
 ];
 

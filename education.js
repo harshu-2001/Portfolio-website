@@ -6,16 +6,22 @@ const educationData = [
         grade: "Bachelors of Technology",
         stream:"Computer Science",
         institute: "Jaypee University of Engineering and Technology, Guna",
+        cgpa:"8.4",
     },
     {
         image: "images/scholarship.png",
         grade: "Intermediate",
-        institute: "St. George's College, Agra",
+        stream: "",
+        institute: "Kiddy's Corner School,Gwalior(M.P)",
+        cgpa: ""
     },
     {
         image: "images/scholarship.png",
-        grade: "Matric",
-        institute: "St. George's College, Agra",
+        grade: "Matric", 
+        stream: "",
+        institute: "The Radiant School ,Gwalior(M.P)",
+        cgpa: ""
+
     }
 ]
 
@@ -47,6 +53,11 @@ educationData.forEach(data => {
     streamElement.classList.add("education-stream");
     streamElement.textContent = data.stream;
 
+    const Cgpa = document.createElement("p");
+    Cgpa.className = "education-stream";
+    Cgpa.classList.add("education-stream");
+    Cgpa.textContent = data.cgpa;
+
     const instituteElement = document.createElement("p");
     instituteElement.className = "education-institute";
     instituteElement.classList.add("education-institute");
@@ -61,6 +72,12 @@ educationData.forEach(data => {
         console.log(error);
     }
 
+    try{
+        divElement2.appendChild(Cgpa);
+    }
+    catch(error){
+        console.log(error);
+    }
 
     divElement.appendChild(imageElement);
     divElement.appendChild(divElement2);
