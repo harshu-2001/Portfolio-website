@@ -1,89 +1,226 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="education.css">
+    <link rel="stylesheet" href="experience.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="skill.css">
+    <script src="https://kit.fontawesome.com/fb7cc2ebd8.js" crossorigin="anonymous"></script>
+</head>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.8.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.8.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.8.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<body>
+    <!-- ---------------header--------------  -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img id="logo-image" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+            <div class="header-text">
+                <p id="title"></p>
+                <h1>Hi, I'm <span id="firstName"></span><br><span id="lastName"></span> from <span id="country"></span></h1>
+            </div>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <!-- -----about------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="about-col-1">
+                    <!-- add user photo -->
+                    <img id="about-image">
+                </div>
+
+                <div class="about-col-2">
+                    <!-- add title -->
+                    <h1 class="sub-title">About me</h1>
+                    <p id="desc"></p>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ------------------- expierence -----------------  -->
+        <div class="expierence">
+            <div class="container">
+                <h1 class="sub-title">Experience</h1>
+                <div id="expierence-box">
+                    <!-- ---- js file ----  -->
+                </div>
+            </div>
+        </div>
+
+
+        
+    <!-- ------------------- Skills -----------------  -->
+        <div class="skills">
+            <div class="container">
+                <h1 class="sub-title">Skills</h1>
+                <div id="skill-box">
+                    <!-- ---- js file ----  -->
+                </div>
+            </div>
+        </div>
+
+
+    <!-- ------------------- Education -----------------  -->
+    <div class="education">
+        <div class="container">
+            <h1 class="sub-title">Education</h1>
+            <div id="education-box">
+                    <!-- ---- js file ----  -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----------------projects----------------- -->
+        <div id="projects">
+            <div class="container">
+                <h1 class="sub-title">My projects</h1>
+                <div class="projects-list">
+                    <!-- js section  -->
+                </div>
+            </div>
+        </div>
+
+
+    <!-- -----------------Portfolio------------------ -->
+
+    <div id="portfolio">
+        <div class="container">
+            <div class="work-list">
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <a href="#"><img src="images/yt work.jpg" alt=""></a>
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>My Youtube Channel</h3>
+                        <p>3D modelling, Animation and Product designing 
+                            <a href="https://www.youtube.com/channel/UC9X_I7QvvWfAMfrG_DqIwLQ" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <img src="images/frontend developer.jpg" alt="">
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>Frontend Developer</h3>
+                        <p>My front end project with professionalism.
+                            <a href="https://github.com/Ayyushhh/Portfolio/tree/main" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <img src="images/101.jpg" alt="">
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>My Blender Work</h3>
+                        <p>Drive link for all my previous work.
+                            <a href="https://drive.google.com/drive/folders/1LgG2aVN_Rsvjc6ImjpVUG8R0KIAye6PQ?usp=sharing" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="work">
+                    <!-- ----- add your work image ---- -->
+                    <img src="images/uiux.jpg" alt="">
+
+                    <!-- add your work title and descrptioon -->
+                    <div class="layer">
+                        <h3>UI/UX</h3>
+                        <p>UI/UX sample work.
+                            <a href="https://drive.google.com/drive/folders/1ohW6OBLu7sjDNyYOkD7x1qIXJo6i4zFv?usp=sharing" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>  
+        </div>
+    </div>
+
+
+
+
+    <!-- ----------- Contact us -----------  -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+
+                <!-- ----left row----  -->
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i> harshushri50@gmail.com</p>
+                    <p> <i class="fa-solid fa-phone"></i>(+91) 7974647991</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/harsh-2001/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/___harsh30_/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/harshu-2001"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <!-- ----- add your resume in folder than add the location ----- -->
+                    <a href="images/Harsh_resume.pdf" download class="btn btn2">Download CV</a>
+                </div>
+
+                <!-- ----right row----  -->
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright <i class="fa-regular fa-copyright"></i> Harsh. Made with <i class="fa-solid fa-heart"></i> </p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- ------------Script-------------  -->
+
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+    <script src="experience.js"></script>
+    <script src="education.js"></script>
+    <script src="skill.js"></script>
+    <script src="service.js"></script>
+
+</body>
 </html>
