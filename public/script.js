@@ -54,7 +54,7 @@ function closemenu() {
 }
 
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbyrTIybZ2qx8u52V8UR-UMOYl32ojKrcaXyV-S3kcqWhY1taLmMYSaZJtryvyw9HAI97Q/exec";
+  "https://script.google.com/macros/s/AKfycbwZFxARuqB5OGh4tPWc51JcZxMfT8PjwhSfUfYBcgoLFomiJ-pISoC3P5tCD75Vgvvlag/exec";
 
 const form = document.getElementById("contact-form");
 const msg = document.getElementById("msg");
