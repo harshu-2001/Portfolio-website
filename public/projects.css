@@ -12,6 +12,8 @@
 }
 
 .projects-list div{
+    width: 280px;
+    height: 350px;
     background: #262626;
     padding: 40px;
     font-size: 13px;

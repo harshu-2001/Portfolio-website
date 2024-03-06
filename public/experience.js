@@ -7,7 +7,7 @@ const experData = [
         time : "02/2023 - Present"
     },
     {
-        post:"Flutter Develope ",
+        post:"Flutter Developer",
         companyname : "Demotic Technologies Pvt. Ltd.",
         time : "07/2022 - 12/2022"
     },
