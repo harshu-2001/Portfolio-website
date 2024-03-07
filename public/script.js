@@ -54,14 +54,14 @@ function closemenu() {
 }
 
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbwZFxARuqB5OGh4tPWc51JcZxMfT8PjwhSfUfYBcgoLFomiJ-pISoC3P5tCD75Vgvvlag/exec";
+  "https://script.google.com/macros/s/AKfycbzvC8lN80YvPBLbZehfWxE0PhuAmdst0ml3D2QnoDzNTxWTXUSra0bzzEsBoC3pV2AjNQ/exec";
 
 const form = document.getElementById("contact-form");
 const msg = document.getElementById("msg");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form), mode:'no-cors' })
+  fetch(scriptURL, { method: "POST", body: new FormData(form), mode:'no-cors', headers: { 'Authorization': 'Bearer mySecretToken123' }})
     .then((response) => {
       if (response.ok) {
         msg.innerHTML = "Message sent successfully";
