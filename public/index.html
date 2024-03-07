@@ -34,19 +34,19 @@
         </nav>
 
         <div class="header-text">
-          <img
-            src="images/background.svg"
-            alt=""
-            class="background-image"
-            style="opacity: 1; transform: none"
-          />
-          <p id="title"></p>
-          <h1>
-            Hi, I'm <span id="firstName"></span><br /><span
-              id="lastName"
-            ></span>
-            from <span id="country"></span>
-          </h1>
+          <div class="row">
+            <h1>
+              Hi,<br />I'm <span id="firstName"></span>
+              <span id="lastName"></span><br />
+              (<span id="profile"></span>)
+            </h1>
+            <img
+              src="images/background.svg"
+              alt=""
+              class="background-image"
+              style="opacity: 1; transform: none"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -153,7 +153,11 @@
 
           <div class="work">
             <!-- ----- add your work image ---- -->
-            <img src="images/flutter-app-developer.png" class ="fit-to-height" alt="" />
+            <img
+              src="images/flutter-app-developer.png"
+              class="fit-to-height"
+              alt=""
+            />
 
             <!-- add your work title and descrptioon -->
             <div class="layer">
@@ -219,18 +223,24 @@
 
           <!-- ----right row----  -->
           <div class="contact-right">
-            <form id= "contact-form"name="submit-to-google-sheet">
-              <input type="text" id = "name" name="Name" placeholder="Your Name" required >
+            <form id="contact-form" name="submit-to-google-sheet">
+              <input
+                type="text"
+                id="name"
+                name="Name"
+                placeholder="Your Name"
+                required
+              />
               <input
                 type="email"
                 name="Email"
-                id = "email"
+                id="email"
                 placeholder="Your Email"
                 required
-              >
+              />
               <textarea
                 name="Message"
-                id = "message"
+                id="message"
                 rows="6"
                 placeholder="Your Message"
               ></textarea>

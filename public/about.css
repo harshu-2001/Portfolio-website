@@ -9,6 +9,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
+
 }
 
 .about-col-1 {
@@ -31,6 +33,13 @@
 .sub-title {
     font-size: 60px;
     font-weight: 600;
+    color: white;
+    margin: 10px;
+}
+
+#desc{
+    font-size: 16px;
+    font-weight: 300;
     color: white;
     margin: 10px;
 }

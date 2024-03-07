@@ -2,17 +2,16 @@
 
 const userData = {
   // logoImage: "images/logo.png",
-  title: "",
   firstName: "Harsh",
   lastName: "Shrivastava",
-  country: "India",
+  profile: "Android Developer",
   aboutImage: "images/user.jpeg",
 };
 
 // const logoPhoto = document.getElementById('logo-image');
 // logoPhoto.src = userData.logoImage;
 
-const headerIdData = ["title", "firstName", "lastName", "country"];
+const headerIdData = [ "firstName", "lastName", "profile"];
 
 headerIdData.forEach((elementId) => {
   const element = document.getElementById(elementId);
@@ -20,24 +19,6 @@ headerIdData.forEach((elementId) => {
 });
 
 // -------------------- porfolio -------------
-
-const portfolioData = [
-  {
-    image: "",
-    heading: "",
-    description: "",
-  },
-  {
-    image: "",
-    heading: "",
-    description: "",
-  },
-  {
-    image: "",
-    heading: "",
-    description: "",
-  },
-];
 
 const porfolioBox = document.getElementsByClassName;
 
