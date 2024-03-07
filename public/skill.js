@@ -26,7 +26,7 @@ const skillData = [
     },
     {
         skill:"Flutter",
-        image:"images/Flutter.png"
+        image:"images/Flutte.png"
     },
     {
         skill:"Unity",
