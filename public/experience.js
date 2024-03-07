@@ -27,7 +27,7 @@ experData.forEach(data => {
 
     const postElement = document.createElement("span");
     postElement.style.fontSize = "20px";
-    postElement.style.color = "#ff004f";
+    postElement.style.color = "#0088ff";
     postElement.textContent = data.post;
 
     const companynameElement = document.createElement("span");

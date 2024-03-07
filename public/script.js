@@ -1,5 +1,4 @@
 // Header Main Page Details
-var secretAuthToken = "mySecretToken123";
 
 const userData = {
   // logoImage: "images/logo.png",
@@ -53,15 +52,34 @@ function closemenu() {
   sidemenu.style.right = "-200px";
 }
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbzvC8lN80YvPBLbZehfWxE0PhuAmdst0ml3D2QnoDzNTxWTXUSra0bzzEsBoC3pV2AjNQ/exec";
+const scriptURL = "https://next-server-bay.vercel.app/api/message";
 
 const form = document.getElementById("contact-form");
+
 const msg = document.getElementById("msg");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form), mode:'no-cors', headers: { 'Authorization': 'Bearer mySecretToken123' }})
+  const Name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  // Create JSON object
+  const formData = {
+    name: Name,
+    email: email,
+    message: message,
+  };
+
+  console.log(formData);
+  const formDataString = JSON.stringify(formData);
+  console.log(formDataString);
+
+  fetch("https://next-server-bay.vercel.app/api/message", {
+    method: "POST",
+    mode: "cors",
+    body: formDataString,
+  })
     .then((response) => {
       if (response.ok) {
         msg.innerHTML = "Message sent successfully";
@@ -74,24 +92,12 @@ form.addEventListener("submit", (e) => {
         msg.innerHTML = "Error sending message";
       }
     })
-    .catch((error) => console.error("Error!", error.message));
+    .then((data) => {
+      console.log("Response from API:", data);
+      // Handle the API response as needed
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      // Handle errors if any
+    });
 });
-// const form = document["submit-to-google-sheet"];
-// const msg = document.getElementById("msg");
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const formData = new FormData(form);
-//   console.log(e);
-//   formData.append("auth", secretAuthToken);
-
-//   fetch(scriptURL, { method: "POST", body: formData, mode: "no-cors" })
-//     .then((response) => {
-//       msg.innerHTML = "Message sent successfully";
-//       setTimeout(function () {
-//         msg.innerHTML = "";
-//       }, 5000);
-
-//       form.reset();
-//     })
-//     .catch((error) => console.error("Error!", error.message));
-// });

@@ -31,7 +31,7 @@
 
 .skill-details:hover {
     transform: scale(1.05); /* Enlarge the skill box on hover */
-    background: #ff004f;
+    background: #0088ff;
 }
 
 /* Style for skill images */
