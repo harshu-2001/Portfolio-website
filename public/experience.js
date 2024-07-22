@@ -2,14 +2,14 @@
 
 const experData = [
   {
-    post: "Junior Android Developer",
+    post: "Software Developer",
     companyname: "Z1 Tech",
     time: "02/2023 - Present",
     detail:
       "Successfully launched in-house applications like Flapster and Pixel  Perfect, catering to specific user needs.\n Developed a robust Ads Mediation Library that simplifies the  integration of ads from different platforms. ",
   },
   {
-    post: "Flutter Developer",
+    post: "Mobile App Developer",
     companyname: "Demotic Technologies Pvt. Ltd.",
     time: "07/2022 - 12/2022",
     detail: "Developed features in existing app.",

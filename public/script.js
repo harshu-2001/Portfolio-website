@@ -4,11 +4,11 @@ const userData = {
   // logoImage: "images/logo.png",
   firstName: "Harsh",
   lastName: "Shrivastava",
-  profile: "Android Developer",
+  profile: "Software Developer",
   aboutImage: "images/user.jpeg",
 };
 
-// const logoPhoto = document.getElementById('logo-image');
+// const logoPhoto = document.getElementBysId('logo-image');
 // logoPhoto.src = userData.logoImage;
 
 const headerIdData = [ "firstName", "lastName", "profile"];
