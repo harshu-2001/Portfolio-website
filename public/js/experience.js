@@ -3,7 +3,7 @@
 const experData = [
     {
         post: "Associate Consultant - Technology Consulting",
-        companyname: "E & Y (Ernst & Young) GDS",
+        companyname: "E & Y (Ernst & Young) GPS",
         time: "02/2023 - 02/2025",
         detail: "Led a 5-member React.js team to deliver Immigration Control System with biometric authentication for NIC, Government of India, processing 10K+ daily passengers while reducing processing time by 40% and bug resolution time by 25%."
     },  
