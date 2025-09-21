@@ -1,4 +1,5 @@
-// --------------- skills -------------- 
+// skills.js - Skills data and functionality
+
 const skillData = [
     {
         skill:"Android",
@@ -58,27 +59,26 @@ const skillData = [
     }
 ];
 
-const skillBox = document.getElementById("skill-box");
-skillData.forEach(data => {
+// Function to load skills
+function loadSkills() {
+    const skillBox = document.getElementById("skill-box");
+    skillData.forEach(data => {
+        const divElement = document.createElement("div");
+        divElement.className = "skill-details";
+        divElement.classList.add("skill-details");
+        
+        const imgElement = document.createElement("img");
+        imgElement.src = data.image;
+        imgElement.style.height = "50px";
+        imgElement.style.width = "50px";
+        imgElement.style.marginBottom = "10px";
 
-    const divElement = document.createElement("div");
-    divElement.className = "skill-details";
-    divElement.classList.add("skill-details");
-    
-    const imgElement = document.createElement("img");
-    imgElement.src = data.image;
-    imgElement.style.height = "50px";
-    imgElement.style.width = "50px";
-    imgElement.style.marginBottom = "10px";
+        const h2Element = document.createElement("h2");
+        h2Element.textContent = data.skill;
 
-    const h2Element = document.createElement("h2");
-    h2Element.textContent = data.skill;
+        divElement.appendChild(imgElement);
+        divElement.appendChild(h2Element);
 
-    divElement.appendChild(imgElement);
-    divElement.appendChild(h2Element);
-
-    skillBox.appendChild(divElement);
-
-});
-
-// -------------- end of skills -------------- 
+        skillBox.appendChild(divElement);
+    });
+}
