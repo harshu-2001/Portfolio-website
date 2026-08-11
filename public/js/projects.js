@@ -2,22 +2,10 @@
 
 var projectData = [];
 
-// Function to load projects from API
+// Function to load projects (use local data only — API removed)
 function loadProjects() {
-    const projectsList = document.querySelector(".projects-list");
-    
-    fetch("https://next-server-bay.vercel.app/api/projects")
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            projectData = data.project;
-            renderProjects(projectData);
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-            // Fallback to local data if API fails
-            loadFallbackProjects();
-        });
+    // Directly render fallback/local projects to avoid external API dependency
+    loadFallbackProjects();
 }
 
 // Fallback projects data if API is unavailable
@@ -67,38 +55,91 @@ function loadFallbackProjects() {
     renderProjects(fallbackProjects);
 }
 
-// Function to render projects
+// Function to render projects — featured first, then secondary
 function renderProjects(projects) {
     const projectsList = document.querySelector(".projects-list");
-    
-    projects.forEach((data) => {
+    if (!projectsList) return;
+    projectsList.innerHTML = '';
+
+    // Featured projects
+    projects.filter(p => p.featured).forEach((data) => {
         const divElement = document.createElement("div");
+        divElement.className = 'project-card featured';
 
         const imgElement = document.createElement("img");
-        imgElement.src = "images/project.png";
-        imgElement.alt = data.altText || data.Projects;
-        imgElement.style.height = "60px";
-        imgElement.style.width = "60px";
+        imgElement.src = "images/project-illustration.svg";
+        imgElement.alt = data.Projects;
+        imgElement.style.width = "100%";
+        imgElement.style.height = "150px";
+        imgElement.style.objectFit = "cover";
+        imgElement.style.borderRadius = "12px";
         imgElement.style.marginBottom = "10px";
 
         const h2Element = document.createElement("h2");
         h2Element.textContent = data.Projects;
 
         const pElement = document.createElement("p");
-        pElement.textContent = data.Project_description.replace(/:/g, '\n');
+        pElement.textContent = data.Project_description;
 
         divElement.appendChild(imgElement);
         divElement.appendChild(h2Element);
         divElement.appendChild(pElement);
-        
-        if (data.Project_links !== "na") {
+
+        if (data.Project_links && data.Project_links !== "na") {
             const aElement = document.createElement("a");
             aElement.href = data.Project_links;
             aElement.textContent = "Learn more";
             aElement.target = "_blank";
             divElement.appendChild(aElement);
         }
-        
+
+        projectsList.appendChild(divElement);
+    });
+
+    // Secondary projects
+    projects.filter(p => !p.featured).forEach((data) => {
+        const divElement = document.createElement("div");
+        divElement.className = 'project-card';
+
+        const imgElement = document.createElement("img");
+        imgElement.src = "images/project-illustration.svg";
+        imgElement.alt = data.Projects;
+        imgElement.style.width = "60px";
+        imgElement.style.height = "60px";
+        imgElement.style.objectFit = "cover";
+        imgElement.style.marginBottom = "10px";
+        imgElement.style.float = 'left';
+        imgElement.style.marginRight = '12px';
+
+        const titleWrapper = document.createElement('div');
+        titleWrapper.style.overflow = 'hidden';
+
+        const h2Element = document.createElement("h2");
+        h2Element.textContent = data.Projects;
+        h2Element.style.marginTop = '0';
+
+        const pElement = document.createElement("p");
+        pElement.textContent = data.Project_description;
+
+        titleWrapper.appendChild(h2Element);
+        titleWrapper.appendChild(pElement);
+
+        divElement.appendChild(imgElement);
+        divElement.appendChild(titleWrapper);
+
+        if (data.Project_links && data.Project_links !== "na") {
+            const aElement = document.createElement("a");
+            aElement.href = data.Project_links;
+            aElement.textContent = "Learn more";
+            aElement.target = "_blank";
+            divElement.appendChild(aElement);
+        }
+
+        // clear float
+        const clearDiv = document.createElement('div');
+        clearDiv.style.clear = 'both';
+        divElement.appendChild(clearDiv);
+
         projectsList.appendChild(divElement);
     });
 }
