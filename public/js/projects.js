@@ -22,33 +22,48 @@ function loadProjects() {
 
 // Fallback projects data if API is unavailable
 function loadFallbackProjects() {
+    // Suggested low-impact projects to consider cutting from the public listing (recommendation):
+    // ["E-Commerce Platform", "Task Management App", "Weather Dashboard"]
+
     const fallbackProjects = [
         {
             Projects: "Copilot Studio Agent — Visa Application Assistant",
             Project_description: "Built a Copilot Studio conversational agent for a public Visa Portal allowing applicants to query application status, biometric appointments, and case history. Integrated with Dataverse and internal REST APIs via a controlled gateway.",
-            Project_links: "https://github.com/harshu-2001"
+            Project_links: "https://github.com/harshu-2001",
+            featured: true
         },
         {
             Projects: "Copilot Studio Agent — Biometric Exception Triage",
             Project_description: "Designed an agent to classify Page Tray Reader biometric exceptions and route cases into Power Automate flows for automated ticket creation and status updates, reducing manual triage.",
-            Project_links: "https://github.com/harshu-2001"
+            Project_links: "https://github.com/harshu-2001",
+            featured: true
         },
         {
-            Projects: "Power Apps Case Management (ICS)",
+            Projects: "Power Apps Case Management System (ICS)",
             Project_description: "Implemented a Power Apps model-driven application on Dataverse for case escalation tracking, shift assignments, and multi-level approvals with Power Automate notifications.",
-            Project_links: "https://github.com/harshu-2001"
+            Project_links: "https://github.com/harshu-2001",
+            featured: true
         },
         {
             Projects: "Custom RAG Pipeline",
             Project_description: "Built a Retrieval-Augmented Generation pipeline using Azure OpenAI and Azure AI Search for internal documentation Q&A with citation-backed responses.",
-            Project_links: "https://github.com/harshu-2001"
+            Project_links: "https://github.com/harshu-2001",
+            featured: false
         },
         {
             Projects: "Azure AI Foundry — NIC Pipeline Observability Assistant",
             Project_description: "Prototyped an Azure AI Foundry agent to summarize NIC pipeline logs and surface likely root causes and remediation steps via function-calling to observability APIs.",
-            Project_links: "https://github.com/harshu-2001"
+            Project_links: "https://github.com/harshu-2001",
+            featured: false
+        },
+        {
+            Projects: "Face Match & Face Detection POC",
+            Project_description: "Proof-of-concept for CNN-based face detection and face-match exposed via a FastAPI service (Uvicorn) for real-time similarity scoring and identity verification.",
+            Project_links: "https://github.com/harshu-2001",
+            featured: false
         }
     ];
+
     renderProjects(fallbackProjects);
 }
 
