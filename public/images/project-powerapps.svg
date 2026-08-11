@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
+  <rect width="600" height="360" rx="18" fill="#071025" />
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+  </defs>
+  <rect x="28" y="28" width="544" height="120" rx="12" fill="url(#g3)" opacity="0.12" />
+  <g fill="#e6eef8" font-family="Inter,Arial,sans-serif">
+    <text x="36" y="74" font-size="20" font-weight="700">Power Apps Case Management</text>
+    <text x="36" y="102" font-size="13" fill="#cfe6ff">Power Apps · Dataverse · Power Automate</text>
+  </g>
+  <g transform="translate(36,160)" fill="#9aa3b2">
+    <rect x="0" y="0" width="340" height="12" rx="6" />
+  </g>
+</svg>

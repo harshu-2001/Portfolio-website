@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f093fb"/>
+      <stop offset="100%" stop-color="#f5576c"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" rx="18" fill="#071025" />
+  <circle cx="480" cy="100" r="80" fill="url(#g2)" opacity="0.16" />
+  <g fill="#e6eef8" font-family="Inter,Arial,sans-serif">
+    <text x="36" y="74" font-size="20" font-weight="700">Biometric Exception Triage</text>
+    <text x="36" y="102" font-size="13" fill="#cfe6ff">Copilot Studio · Power Automate</text>
+  </g>
+  <g transform="translate(36,160)" fill="#9aa3b2">
+    <rect x="0" y="0" width="200" height="12" rx="6" />
+    <rect x="220" y="0" width="240" height="12" rx="6" />
+  </g>
+</svg>

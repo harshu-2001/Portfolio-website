@@ -17,37 +17,37 @@ function loadFallbackProjects() {
         {
             Projects: "Copilot Studio Agent — Visa Application Assistant",
             Project_description: "Built a Copilot Studio conversational agent for a public Visa Portal allowing applicants to query application status, biometric appointments, and case history. Integrated with Dataverse and internal REST APIs via a controlled gateway.",
-            Project_links: "https://github.com/harshu-2001",
+            image: "images/project-visa.svg",
             featured: true
         },
         {
             Projects: "Copilot Studio Agent — Biometric Exception Triage",
             Project_description: "Designed an agent to classify Page Tray Reader biometric exceptions and route cases into Power Automate flows for automated ticket creation and status updates, reducing manual triage.",
-            Project_links: "https://github.com/harshu-2001",
+            image: "images/project-biometric.svg",
             featured: true
         },
         {
             Projects: "Power Apps Case Management System (ICS)",
             Project_description: "Implemented a Power Apps model-driven application on Dataverse for case escalation tracking, shift assignments, and multi-level approvals with Power Automate notifications.",
-            Project_links: "https://github.com/harshu-2001",
+            image: "images/project-powerapps.svg",
             featured: true
         },
         {
             Projects: "Custom RAG Pipeline",
             Project_description: "Built a Retrieval-Augmented Generation pipeline using Azure OpenAI and Azure AI Search for internal documentation Q&A with citation-backed responses.",
-            Project_links: "https://github.com/harshu-2001",
+            image: "images/project-rag.svg",
             featured: false
         },
         {
             Projects: "Azure AI Foundry — NIC Pipeline Observability Assistant",
             Project_description: "Prototyped an Azure AI Foundry agent to summarize NIC pipeline logs and surface likely root causes and remediation steps via function-calling to observability APIs.",
-            Project_links: "https://github.com/harshu-2001",
+            image: "images/project-foundry.svg",
             featured: false
         },
         {
             Projects: "Face Match & Face Detection POC",
             Project_description: "Proof-of-concept for CNN-based face detection and face-match exposed via a FastAPI service (Uvicorn) for real-time similarity scoring and identity verification.",
-            Project_links: "https://github.com/harshu-2001",
+            image: "images/project-face.svg",
             featured: false
         }
     ];
@@ -67,7 +67,7 @@ function renderProjects(projects) {
         divElement.className = 'project-card featured';
 
         const imgElement = document.createElement("img");
-        imgElement.src = "images/project-illustration.svg";
+        imgElement.src = data.image || "images/project-illustration.svg";
         imgElement.alt = data.Projects;
         imgElement.style.width = "100%";
         imgElement.style.height = "150px";
@@ -85,14 +85,6 @@ function renderProjects(projects) {
         divElement.appendChild(h2Element);
         divElement.appendChild(pElement);
 
-        if (data.Project_links && data.Project_links !== "na") {
-            const aElement = document.createElement("a");
-            aElement.href = data.Project_links;
-            aElement.textContent = "Learn more";
-            aElement.target = "_blank";
-            divElement.appendChild(aElement);
-        }
-
         projectsList.appendChild(divElement);
     });
 
@@ -102,7 +94,7 @@ function renderProjects(projects) {
         divElement.className = 'project-card';
 
         const imgElement = document.createElement("img");
-        imgElement.src = "images/project-illustration.svg";
+        imgElement.src = data.image || "images/project-illustration.svg";
         imgElement.alt = data.Projects;
         imgElement.style.width = "60px";
         imgElement.style.height = "60px";
@@ -126,14 +118,6 @@ function renderProjects(projects) {
 
         divElement.appendChild(imgElement);
         divElement.appendChild(titleWrapper);
-
-        if (data.Project_links && data.Project_links !== "na") {
-            const aElement = document.createElement("a");
-            aElement.href = data.Project_links;
-            aElement.textContent = "Learn more";
-            aElement.target = "_blank";
-            divElement.appendChild(aElement);
-        }
 
         // clear float
         const clearDiv = document.createElement('div');
