@@ -112,22 +112,15 @@ document.addEventListener('DOMContentLoaded', function () {
     loadEducation();
     loadProjects();
 
-    // Set profile information
+    // Set profile information (aligned with resume)
     document.getElementById('firstName').textContent = 'Harsh';
     document.getElementById('lastName').textContent = 'Shrivastava';
-    document.getElementById('profile').textContent = 'Frontend Developer';
+    document.getElementById('profile').textContent = 'AI & Automation Developer';
 
-    // Set description
+    // Set description (resume summary)
     const desc = document.getElementById('desc');
     if (desc) {
-        desc.innerHTML = `I'm a passionate Frontend Developer with expertise in modern web technologies. 
-                I create engaging, responsive, and user-friendly web applications using HTML, CSS, JavaScript, 
-                and popular frameworks like React and Flutter. With a keen eye for design and attention to detail, 
-                I transform ideas into beautiful digital experiences.
-                <br><br>
-                My journey in web development started with a curiosity for creating interactive websites, 
-                and now I specialize in building scalable applications that provide excellent user experiences 
-                across all devices and platforms.`;
+        desc.innerHTML = `AI & Automation Developer with 3+ years of engineering experience, specializing in Copilot Studio agents, Power Platform, and LLM-based automation. Currently at Ernst & Young (EY), building Copilot Studio agents and Power Platform solutions across corporate functions for the Immigration Control System (ICS), and integrating biometric hardware for Government of India projects.`;
     }
 
     // Add loading animation
@@ -155,7 +148,7 @@ function typeWriter(element, text, speed = 50) {
 setTimeout(() => {
     const profileElement = document.getElementById('profile');
     if (profileElement) {
-        typeWriter(profileElement, 'Frontend Developer');
+    typeWriter(profileElement, 'AI & Automation Developer');
     }
 }, 1000);
 
