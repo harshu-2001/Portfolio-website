@@ -3,23 +3,23 @@
 const educationData = [
     {
         image: "images/scholarship.png",
-        grade: "Bachelors of Technology",
-        stream:"Computer Science",
-        institute: "Jaypee University of Engineering and Technology, Guna",
-        cgpa:"8.4",
+        grade: "B.Tech in Computer Science & Engineering (Artificial Intelligence)",
+        stream: "",
+        institute: "Jaypee University of Engineering and Technology — 2023",
+        cgpa: "8.4",
     },
     {
         image: "images/scholarship.png",
         grade: "Intermediate",
         stream: "",
-        institute: "Kiddy's Corner School,Gwalior(M.P)",
+        institute: "Kiddy's Corner School, Gwalior (M.P)",
         cgpa: ""
     },
     {
         image: "images/scholarship.png",
-        grade: "Matric", 
+        grade: "Matric",
         stream: "",
-        institute: "The Radiant School ,Gwalior(M.P)",
+        institute: "The Radiant School, Gwalior (M.P)",
         cgpa: ""
     }
 ];

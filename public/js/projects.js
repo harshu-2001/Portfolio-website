@@ -24,18 +24,28 @@ function loadProjects() {
 function loadFallbackProjects() {
     const fallbackProjects = [
         {
-            Projects: "E-Commerce Platform",
-            Project_description: "A full-featured online shopping platform with user authentication, product catalog, shopping cart, and payment integration.",
+            Projects: "Copilot Studio Agent — Visa Application Assistant",
+            Project_description: "Built a Copilot Studio conversational agent for a public Visa Portal allowing applicants to query application status, biometric appointments, and case history. Integrated with Dataverse and internal REST APIs via a controlled gateway.",
             Project_links: "https://github.com/harshu-2001"
         },
         {
-            Projects: "Task Management App",
-            Project_description: "A collaborative productivity application with real-time updates, drag-and-drop functionality, and team collaboration tools.",
+            Projects: "Copilot Studio Agent — Biometric Exception Triage",
+            Project_description: "Designed an agent to classify Page Tray Reader biometric exceptions and route cases into Power Automate flows for automated ticket creation and status updates, reducing manual triage.",
             Project_links: "https://github.com/harshu-2001"
         },
         {
-            Projects: "Weather Dashboard",
-            Project_description: "Interactive weather application with real-time data, location-based forecasts, and responsive design.",
+            Projects: "Power Apps Case Management (ICS)",
+            Project_description: "Implemented a Power Apps model-driven application on Dataverse for case escalation tracking, shift assignments, and multi-level approvals with Power Automate notifications.",
+            Project_links: "https://github.com/harshu-2001"
+        },
+        {
+            Projects: "Custom RAG Pipeline",
+            Project_description: "Built a Retrieval-Augmented Generation pipeline using Azure OpenAI and Azure AI Search for internal documentation Q&A with citation-backed responses.",
+            Project_links: "https://github.com/harshu-2001"
+        },
+        {
+            Projects: "Azure AI Foundry — NIC Pipeline Observability Assistant",
+            Project_description: "Prototyped an Azure AI Foundry agent to summarize NIC pipeline logs and surface likely root causes and remediation steps via function-calling to observability APIs.",
             Project_links: "https://github.com/harshu-2001"
         }
     ];

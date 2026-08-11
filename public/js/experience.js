@@ -2,22 +2,22 @@
 
 const experData = [
     {
-        post: "Associate Consultant - Technology Consulting",
-        companyname: "E & Y (Ernst & Young) GPS",
-        time: "02/2023 - 02/2025",
-        detail: "Led a 5-member React.js team to deliver Immigration Control System with biometric authentication for NIC, Government of India, processing 10K+ daily passengers while reducing processing time by 40% and bug resolution time by 25%."
+        post: "Associate Consultant - Technology",
+        companyname: "Ernst & Young (EY)",
+        time: "Feb 2025 - Present",
+        detail: "Power Platform & Copilot Studio developer for the Immigration Control System (ICS): built Copilot Studio agents, Power Apps model-driven apps on Dataverse, biometric integrations, and a Tauri secure SFTP app. Led a 5-member React.js team; built FastAPI services (face-match POC); resolved 100+ production issues and improved pipeline throughput and MTTR."
     },  
     {
         post: "Software Developer",
         companyname: "Z1 Tech",
-        time: "02/2023 - 02/2025",
-        detail: "Successfully launched in-house applications like Flapster and Pixel Perfect, catering to specific user needs.\n Developed a robust Ads Mediation Library that simplifies the integration of ads from different platforms."
+        time: "Feb 2023 - Feb 2025",
+        detail: "Published Flapster and Pixel Perfect (15k+ users growth); built an Ads Mediation SDK (Kotlin) to unify third-party ad providers; developed React/Next dashboards with performance profiling and optimized sites to improve load times and organic traffic."
     },
     {
         post: "Mobile App Developer",
         companyname: "Demotic Technologies Pvt. Ltd.",
-        time: "07/2022 - 12/2022",
-        detail: "Developed features in existing app."
+        time: "Aug 2022 - Nov 2022",
+        detail: "Delivered 5+ feature releases and fixed 50+ production bugs; improved FCM reliability with retry logic and added crash/observability instrumentation to reduce crash rate from ~6% to <2%."
     },
     {
         post: "Android Developer Intern",
