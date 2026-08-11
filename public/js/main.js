@@ -115,12 +115,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set profile information (aligned with resume)
     document.getElementById('firstName').textContent = 'Harsh';
     document.getElementById('lastName').textContent = 'Shrivastava';
-    document.getElementById('profile').textContent = 'AI & Automation Developer';
+    document.getElementById('profile').textContent = 'AI/Automation Developer';
+    // secondary role
+    const secondary = document.getElementById('secondary-role');
+    if (secondary) secondary.textContent = '\u00B7 Full-Stack Engineer';
 
-    // Set description (resume summary)
+    // Set description (resume summary) — hook + main + closing
     const desc = document.getElementById('desc');
     if (desc) {
-        desc.innerHTML = `AI & Automation Developer with 3+ years of engineering experience, specializing in Copilot Studio agents, Power Platform, and LLM-based automation. Currently at Ernst & Young (EY), building Copilot Studio agents and Power Platform solutions across corporate functions for the Immigration Control System (ICS), and integrating biometric hardware for Government of India projects.`;
+        desc.innerHTML = '<strong>\u201CI build AI agents that do real work — not demos.\u201D</strong><br/><br/>' +
+            "I'm an AI & Automation Developer with 3+ years of engineering experience, specializing in Copilot Studio agents, Power Platform, and LLM-based automation. I currently build Copilot Studio agents and Power Platform solutions for the Immigration Control System at Ernst & Young (EY), alongside biometric integrations for Government of India projects." +
+            '<br/><br/>' +
+            "My background spans full-stack engineering — React, Next.js, Python, FastAPI — to agentic AI systems like RAG pipelines and Azure AI Foundry agents. I like working close to production: shipping things that real teams depend on, not just prototypes.";
     }
 
     // Add loading animation

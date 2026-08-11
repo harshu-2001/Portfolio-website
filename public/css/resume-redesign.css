@@ -43,3 +43,6 @@ body{
 #contact .contact-left p{color:var(--muted)}
 /* Responsive */
 @media (max-width:900px){.header-container{grid-template-columns:1fr;}.hero-art{height:240px}}
+
+/* small helper for secondary role text */
+.muted-role{color:var(--muted);font-weight:600;font-size:0.95rem;margin-left:0.6rem}
