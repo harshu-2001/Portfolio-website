@@ -300,6 +300,7 @@ nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
 .header-portrait {
@@ -396,6 +397,7 @@ nav {
 
 .stats-grid {
   display: grid;
+  margin-top: 1.5rem;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
@@ -833,6 +835,7 @@ body.loading {
   }
 
   .hero-actions {
+    margin-top: 1.5rem;
     justify-content: center;
   }
 
