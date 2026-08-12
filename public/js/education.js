@@ -2,21 +2,21 @@
 
 const educationData = [
     {
-        image: "images/scholarship.png",
+        image: "images/education.png",
         grade: "B.Tech in Computer Science & Engineering (Artificial Intelligence)",
         stream: "",
         institute: "Jaypee University of Engineering and Technology — 2023",
-        cgpa: "8.4",
+        cgpa: "CGPA: 8.4",
     },
     {
-        image: "images/scholarship.png",
+        image: "images/education.png",
         grade: "Intermediate",
         stream: "",
         institute: "Kiddy's Corner School, Gwalior (M.P)",
         cgpa: ""
     },
     {
-        image: "images/scholarship.png",
+        image: "images/education.png",
         grade: "Matric",
         stream: "",
         institute: "The Radiant School, Gwalior (M.P)",

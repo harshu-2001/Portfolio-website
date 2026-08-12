@@ -1,18 +1,14 @@
-// projects.js - Projects data and API functionality
+// projects.js - Projects data and rendering
 
 var projectData = [];
 
-// Function to load projects (use local data only — API removed)
+// Function to load projects (local data only — no external API dependency)
 function loadProjects() {
-    // Directly render fallback/local projects to avoid external API dependency
     loadFallbackProjects();
 }
 
-// Fallback projects data if API is unavailable
+// Local projects data, mirrors the "Projects" section of the resume
 function loadFallbackProjects() {
-    // Suggested low-impact projects to consider cutting from the public listing (recommendation):
-    // ["E-Commerce Platform", "Task Management App", "Weather Dashboard"]
-
     const fallbackProjects = [
         {
             Projects: "Copilot Studio Agent — Visa Application Assistant",
@@ -36,32 +32,31 @@ function loadFallbackProjects() {
             Projects: "Custom RAG Pipeline",
             Project_description: "Built a Retrieval-Augmented Generation pipeline using Azure OpenAI and Azure AI Search for internal documentation Q&A with citation-backed responses.",
             image: "images/project-rag.svg",
-            featured: false
+            featured: true
         },
         {
             Projects: "Azure AI Foundry — NIC Pipeline Observability Assistant",
             Project_description: "Prototyped an Azure AI Foundry agent to summarize NIC pipeline logs and surface likely root causes and remediation steps via function-calling to observability APIs.",
             image: "images/project-foundry.svg",
-            featured: false
+            featured: true
         },
         {
             Projects: "Face Match & Face Detection POC",
             Project_description: "Proof-of-concept for CNN-based face detection and face-match exposed via a FastAPI service (Uvicorn) for real-time similarity scoring and identity verification.",
-            image: "images/project-face.svg",
-            featured: false
+            image: "images/project-facematch.svg",
+            featured: true
         }
     ];
 
     renderProjects(fallbackProjects);
 }
 
-// Function to render projects — featured first, then secondary
+// Renders projects — featured first, then secondary
 function renderProjects(projects) {
     const projectsList = document.querySelector(".projects-list");
     if (!projectsList) return;
     projectsList.innerHTML = '';
 
-    // Featured projects
     projects.filter(p => p.featured).forEach((data) => {
         const divElement = document.createElement("div");
         divElement.className = 'project-card featured';
@@ -72,8 +67,6 @@ function renderProjects(projects) {
         imgElement.style.width = "100%";
         imgElement.style.height = "150px";
         imgElement.style.objectFit = "cover";
-        imgElement.style.borderRadius = "12px";
-        imgElement.style.marginBottom = "10px";
 
         const h2Element = document.createElement("h2");
         h2Element.textContent = data.Projects;
@@ -88,7 +81,6 @@ function renderProjects(projects) {
         projectsList.appendChild(divElement);
     });
 
-    // Secondary projects
     projects.filter(p => !p.featured).forEach((data) => {
         const divElement = document.createElement("div");
         divElement.className = 'project-card';
@@ -119,7 +111,6 @@ function renderProjects(projects) {
         divElement.appendChild(imgElement);
         divElement.appendChild(titleWrapper);
 
-        // clear float
         const clearDiv = document.createElement('div');
         clearDiv.style.clear = 'both';
         divElement.appendChild(clearDiv);
