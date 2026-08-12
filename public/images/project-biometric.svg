@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f093fb"/>
+      <stop offset="100%" stop-color="#f5576c"/>
+    </linearGradient>
+    <radialGradient id="g1-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f093fb" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f093fb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1-line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f093fb"/>
+      <stop offset="100%" stop-color="#f5576c"/>
+    </linearGradient>
+    <pattern id="g1-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r="1.4" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+    <clipPath id="g1-clip">
+      <rect width="600" height="360" rx="20"/>
+    </clipPath>
+    <linearGradient id="g1-chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#131d33"/>
+      <stop offset="100%" stop-color="#0c1526"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="20" fill="#070c18"/>
+
+  <g clip-path="url(#g1-clip)">
+    <rect width="600" height="360" fill="url(g1-dots)"/>
+    <circle cx="520" cy="60" r="170" fill="url(#g1-glow)"/>
+    <circle cx="520" cy="60" r="170" fill="none" stroke="#f093fb" stroke-opacity="0.08" stroke-width="1"/>
+    <path d="M0 360 L600 360 L600 300 Q300 250 0 300 Z" fill="#f093fb" opacity="0.035"/>
+  </g>
+
+  <!-- icon chip -->
+  <rect x="36" y="34" width="64" height="64" rx="16" fill="url(#g1-chip)" stroke="#f093fb" stroke-opacity="0.35" stroke-width="1"/>
+  <g transform="translate(52,50)">
+
+    <g fill="none" stroke="url(#g1-line)" stroke-width="2" stroke-linecap="round">
+      <path d="M16 6c5.5 0 10 4.5 10 10v3"/>
+      <path d="M16 10c3.3 0 6 2.7 6 6v4c0 1.6.4 3 1.2 4.3"/>
+      <path d="M16 14c1.1 0 2 .9 2 2v6c0 2 .6 3.8 1.8 5.3"/>
+      <path d="M12.4 27.6C11 25.6 10 23 10 20v-4c0-3.3 2.7-6 6-6"/>
+      <path d="M6 20c0-5.5 4.5-10 10-10"/>
+    </g>
+
+  </g>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="118" y="63" font-size="21" font-weight="700" fill="#f2f6fc">Biometric Exception Triage</text>
+    <text x="118" y="86" font-size="12.5" fill="#8fa3c4">Copilot Studio · Power Automate</text>
+  </g>
+
+  <line x1="36" y1="120" x2="564" y2="120" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="600">
+    <rect x="36.0" y="150" width="110.4" height="27" rx="13.5" fill="#ffffff" fill-opacity="0.045" stroke="#f093fb" stroke-opacity="0.30" stroke-width="1"/>
+    <text x="91.2" y="168" font-size="11.5" fill="#cfe0fb" text-anchor="middle">Copilot Studio</text>
+    <rect x="158.4" y="150" width="110.4" height="27" rx="13.5" fill="#ffffff" fill-opacity="0.045" stroke="#f093fb" stroke-opacity="0.30" stroke-width="1"/>
+    <text x="213.6" y="168" font-size="11.5" fill="#cfe0fb" text-anchor="middle">Power Automate</text>
+    <rect x="280.8" y="150" width="77.4" height="27" rx="13.5" fill="#ffffff" fill-opacity="0.045" stroke="#f093fb" stroke-opacity="0.30" stroke-width="1"/>
+    <text x="319.5" y="168" font-size="11.5" fill="#cfe0fb" text-anchor="middle">Dataverse</text>
+  </g>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="36" y="335" font-size="11.5" fill="#5b6b85">AGENTIC WORKFLOW</text>
+  </g>
+</svg>

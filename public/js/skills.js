@@ -1,84 +1,99 @@
-// skills.js - Skills data and functionality
+// skills.js - Skills data and grouped renderer
+// Grouping mirrors the resume's four skill categories exactly.
+// Icon filenames are distinct per skill (no more "free.png" placeholder)
+// so they're ready to be generated in the next pass.
 
-const skillData = [
+const skillsGroups = [
     {
-        skill:"Android",
-        image:"images/android.png"
+        group: "AI & Automation",
+        skills: [
+            { name: "Copilot Studio", image: "images/copilot-studio.svg" },
+            { name: "Power Automate", image: "images/power-automate.svg" },
+            { name: "Power Apps", image: "images/power-apps.svg" },
+            { name: "RAG", image: "images/rag.svg" },
+            { name: "Prompt Engineering", image: "images/prompt-engineering.svg" },
+            { name: "Evaluation", image: "images/evaluation.svg" },
+            { name: "Claude", image: "images/claude.svg" },
+            { name: "GitHub Copilot", image: "images/github-copilot.svg" },
+            { name: "LangChain", image: "images/langchain.svg" },
+            { name: "MCP", image: "images/mcp.svg" }
+        ]
     },
     {
-        skill:"Kotlin",
-        image:"images/kotlin.png"
+        group: "Core Tech Stack",
+        skills: [
+            { name: "Python", image: "images/python.svg" },
+            { name: "React.js", image: "images/react.svg" },
+            { name: "Next.js", image: "images/nextjs.svg" },
+            { name: "Node.js", image: "images/nodejs.svg" },
+            { name: "FastAPI", image: "images/fastapi.svg" },
+            { name: "Dataverse", image: "images/dataverse.svg" }
+        ]
     },
     {
-        skill:"CPP",
-        image:"images/cpp.png"
+        group: "Programming Languages",
+        skills: [
+            { name: "TypeScript", image: "images/typescript.svg" },
+            { name: "JavaScript", image: "images/javascript.svg" },
+            { name: "Python", image: "images/python.svg" },
+            { name: "Kotlin", image: "images/kotlin.svg" },
+            { name: "Java", image: "images/java.svg" },
+            { name: "SQL", image: "images/sql.svg" },
+            { name: "Dart", image: "images/dart.svg" }
+        ]
     },
     {
-        skill:"HTML",
-        image:"images/html.png"
-    },
-    { 
-        skill:"CSS",
-        image:"images/css.png"
-    },
-    {
-        skill:"JavaScript",
-        image:"images/js.png"
-    },
-    {
-        skill:"Flutter",
-        image:"images/free.png"
-    },
-    {
-        skill:"Unity",
-        image:"images/unity.png"
-    },
-    {
-        skill:"SwiftUI",
-        image:"images/SwiftUI.png"
-    },
-    {
-        skill:"C#",
-        image:"images/C-sharp.png"
-    },
-    {
-        skill:"Figma",
-        image:"images/figma.png"
-    },
-    {
-        skill:"Python",
-        image:"images/python.png"
-    },
-    {
-        skill:"Java",
-        image:"images/java.png"
-    },
-    {
-        skill:"React",
-        image:"images/react.png"
+        group: "Tools & Architecture",
+        skills: [
+            { name: "Docker", image: "images/docker.svg" },
+            { name: "Git", image: "images/git.svg" },
+            { name: "IAM", image: "images/iam.svg" },
+            { name: "SSO", image: "images/sso.svg" },
+            { name: "REST APIs", image: "images/rest-apis.svg" },
+            { name: "IPC Architecture", image: "images/ipc-architecture.svg" },
+            { name: "Firebase", image: "images/firebase.svg" },
+            { name: "Postman", image: "images/postman.svg" },
+            { name: "Jira", image: "images/jira.svg" }
+        ]
     }
 ];
 
-// Function to load skills
 function loadSkills() {
     const skillBox = document.getElementById("skill-box");
-    skillData.forEach(data => {
-        const divElement = document.createElement("div");
-        divElement.className = "skill-details";
-        divElement.classList.add("skill-details");
-        
-        const imgElement = document.createElement("img");
-        imgElement.src = data.image;
-        imgElement.style.height = "50px";
-        imgElement.style.width = "50px";
-        imgElement.style.marginBottom = "10px";
+    if (!skillBox) return;
 
-        const h2Element = document.createElement("h2");
-        h2Element.textContent = data.skill;
+    // Clear existing
+    skillBox.innerHTML = '';
 
-        divElement.appendChild(imgElement);
-        divElement.appendChild(h2Element);
+    skillsGroups.forEach(group => {
+        const groupCard = document.createElement('div');
+        groupCard.className = 'card';
 
-        skillBox.appendChild(divElement);
+        const title = document.createElement('h3');
+        title.textContent = group.group;
+        title.style.marginBottom = '1rem';
+
+        const grid = document.createElement('div');
+        grid.className = 'skills-grid';
+
+        group.skills.forEach(s => {
+            const pill = document.createElement('div');
+            pill.className = 'skill-pill';
+
+            const img = document.createElement('img');
+            img.src = s.image;
+            img.alt = s.name;
+
+            const name = document.createElement('div');
+            name.textContent = s.name;
+
+            pill.appendChild(img);
+            pill.appendChild(name);
+            grid.appendChild(pill);
+        });
+
+        groupCard.appendChild(title);
+        groupCard.appendChild(grid);
+        skillBox.appendChild(groupCard);
     });
 }

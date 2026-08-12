@@ -1,70 +1,115 @@
 // experience.js - Experience data and functionality
 
+/*
+Note: An earlier version of this file rendered an "Android Developer Intern"
+(HDPI Soft) entry that is not present on the current resume. It's kept here
+as `archived: true` for reference only — loadExperience() filters it out so
+the public site always matches the resume.
+*/
+
 const experData = [
     {
-        post: "Associate Consultant - Technology Consulting",
-        companyname: "E & Y (Ernst & Young) GPS",
-        time: "02/2023 - 02/2025",
-        detail: "Led a 5-member React.js team to deliver Immigration Control System with biometric authentication for NIC, Government of India, processing 10K+ daily passengers while reducing processing time by 40% and bug resolution time by 25%."
-    },  
-    {
-        post: "Software Developer",
-        companyname: "Z1 Tech",
-        time: "02/2023 - 02/2025",
-        detail: "Successfully launched in-house applications like Flapster and Pixel Perfect, catering to specific user needs.\n Developed a robust Ads Mediation Library that simplifies the integration of ads from different platforms."
+        company: "Ernst & Young (EY)",
+        role: "Associate Consultant - Technology",
+        location: "Delhi, India",
+        time: "Feb 2025 – Present",
+        current: true,
+        bullets: [
+            "Power Platform Developer for the Immigration Control System (ICS), building Copilot Studio agents across visa processing, biometric exception handling, and case management",
+            "Built a Copilot Studio agent for the Visa Portal so applicants can query application and biometric appointment status via natural language, integrated with Dataverse and REST APIs",
+            "Designed a Power Apps model-driven Case Management system on Dataverse with Power Automate-driven approval workflows and notifications",
+            "Developed a custom Azure AI Foundry agent that scaffolds boilerplate and surfaces internal docs on demand, cutting new-module ramp-up time",
+            "Led a 5-member React.js team for the ICS core platform, designing clean UI-to-service boundaries with state sync and error handling",
+            "Built a Tauri desktop app (Rust + TypeScript) for secure SFTP transfer in air-gapped environments using an IPC architecture",
+            "Integrated Page Tray Reader biometric hardware with retry logic and error recovery, supporting 10,000+ passengers/day",
+            "Resolved 100+ production issues, cutting turnaround time by ~25%; optimized NIC pipelines to cut processing time by ~40%",
+            "Built a CNN-based Face Match & Face Detection proof-of-concept, exposed via a FastAPI (Uvicorn) service for real-time identity verification"
+        ]
     },
     {
-        post: "Mobile App Developer",
-        companyname: "Demotic Technologies Pvt. Ltd.",
-        time: "07/2022 - 12/2022",
-        detail: "Developed features in existing app."
+        company: "Z1 Tech",
+        role: "Software Developer",
+        location: "Gurugram, Haryana",
+        time: "Feb 2023 – Feb 2025",
+        bullets: [
+            "Published Flapster and Pixel Perfect end-to-end, scaling to 15,000+ users in 6 months",
+            "Built an Ads Mediation SDK (Kotlin) with clean UI/backend/third-party boundaries, boosting ad revenue by ~20%",
+            "Developed React.js / Next.js dashboards with performance profiling, cutting load time by ~30%",
+            "Optimized company websites for performance, growing organic traffic by ~12%"
+        ]
     },
     {
-        post: "Android Developer Intern",
-        companyname: "HDPI Soft Weblink Solutions",
-        time: "05/2023 - 06/2023",
-        detail: "Developed and maintain existing app."
+        company: "Demotic Technologies Pvt. Ltd.",
+        role: "Mobile App Developer",
+        location: "Remote",
+        time: "Aug 2022 – Nov 2022",
+        bullets: [
+            "Delivered 5+ feature releases and resolved 50+ production bugs in 3 months",
+            "Improved FCM notification reliability with retry logic, raising success rate by ~35%",
+            "Added crash/error observability, cutting crash rate from ~6% to below 2%"
+        ]
+    },
+    // Preserved for reference only — not shown on the site or the current resume
+    {
+        company: "HDPI Soft Weblink Solutions",
+        role: "Android Developer Intern",
+        location: "",
+        time: "May 2022 – Jun 2022",
+        archived: true,
+        bullets: [
+            "Internship tasks: developed and maintained parts of an existing Android app (preserved for historical reference)."
+        ]
     }
 ];
 
-// Function to load experience
+// Function to load experience (renders a vertical timeline with bullets)
 function loadExperience() {
     const expierenceBox = document.getElementById("expierence-box");
-    experData.forEach((data) => {
+    if (!expierenceBox) return;
+
+    experData.filter(item => !item.archived).forEach((item) => {
         const divElement = document.createElement("div");
-        divElement.className = "expierence-details";
-        divElement.classList.add("expierence-details");
+        divElement.className = "expierence-details" + (item.current ? " is-current" : "");
 
-        const postElement = document.createElement("span");
-        postElement.style.fontSize = "20px";
-        postElement.style.color = "#0088ff";
-        postElement.style.marginBottom = "10px";
-        postElement.textContent = data.post;
+        const header = document.createElement("div");
+        header.className = "experience-item";
 
-        const companynameElement = document.createElement("span");
-        companynameElement.style.fontSize = "18px";
-        companynameElement.textContent = data.companyname;
+        const title = document.createElement("h3");
+        title.textContent = `${item.role} — ${item.company}`;
+        if (item.current) {
+            const badge = document.createElement("span");
+            badge.className = "badge-live";
+            badge.textContent = "ACTIVE";
+            title.appendChild(badge);
+        }
 
-        const companynameDetailElement = document.createElement("p");
-        companynameDetailElement.style.fontSize = "18px";
-        companynameDetailElement.textContent = data.detail;
+        const meta = document.createElement("div");
+        meta.className = "meta";
+        const loc = document.createElement("span");
+        loc.textContent = item.location || "";
+        loc.style.color = "#8b93a7";
+        const time = document.createElement("span");
+        time.textContent = item.time || "";
+        time.style.color = "#8b93a7";
 
-        const timeElement = document.createElement("span");
-        timeElement.style.fontSize = "16px";
-        timeElement.textContent = data.time;
+        meta.appendChild(loc);
+        meta.appendChild(time);
 
-        const brElement = document.createElement("br");
-        const spacerElement = document.createElement("spacer");
-        spacerElement.style.height = "20px";
+        header.appendChild(title);
+        header.appendChild(meta);
 
-        divElement.appendChild(postElement);
-        divElement.appendChild(brElement);
-        divElement.appendChild(companynameElement);
-        divElement.appendChild(brElement.cloneNode());
-        divElement.appendChild(timeElement);
-        divElement.appendChild(brElement.cloneNode());
-        divElement.appendChild(spacerElement);
-        divElement.appendChild(companynameDetailElement);
+        divElement.appendChild(header);
+
+        if (Array.isArray(item.bullets) && item.bullets.length) {
+            const ul = document.createElement("ul");
+            item.bullets.forEach(b => {
+                const li = document.createElement("li");
+                li.textContent = b;
+                ul.appendChild(li);
+            });
+            divElement.appendChild(ul);
+        }
+
         expierenceBox.appendChild(divElement);
     });
 }
