@@ -42,7 +42,7 @@ const experData = [
         company: "Demotic Technologies Pvt. Ltd.",
         role: "Mobile App Developer",
         location: "Remote",
-        time: "Aug 2022 – Nov 2022",
+        time: "Aug 2022 – Feb 2023",
         bullets: [
             "Delivered 5+ feature releases and resolved 50+ production bugs in 3 months",
             "Improved FCM notification reliability with retry logic, raising success rate by ~35%",
